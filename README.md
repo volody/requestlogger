@@ -20,7 +20,8 @@ using curl in bash or cmd
 ```bash
 curl -X POST https://requestlogger2024.azurewebsites.net -d "param1=value1&param2=value2"
 ```
+using powershell
 ```powershell
-$body = Get-Content -Path "path\to\your\data.json" -Raw
-Invoke-WebRequest -Uri https://requestlogger2024.azurewebsites.net -Method POST -Body $body -ContentType "application/json"
+$jsonData = Get-Content -Path "C:\path\to\your\payload.json" -Raw | ConvertFrom-Json
+Invoke-WebRequest -Uri https://requestlogger2024.azurewebsites.net -Method POST -Body ($jsonData | ConvertTo-Json) -ContentType "application/json"
 ```
