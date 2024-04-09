@@ -12,8 +12,9 @@ az storage account create --name requestlogger2024 --location canadacentral --re
 az functionapp create --resource-group request-logger --consumption-plan-location canadacentral --runtime dotnet --functions-version 4 --name requestlogger2024 --storage-account requestlogger2024
 ```
 ### Deploy Your Function App
+Navigate to your function app's directory on your local machine and deploy it using the Azure Functions Core Tools:
 ```bash
-func azure functionapp publish MyFunctionApp
+func azure functionapp publish requestlogger2024
 ```
 ### Verify Deployment
 using curl in bash or cmd
